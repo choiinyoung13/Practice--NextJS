@@ -19,6 +19,11 @@ export default async function MealDetail({ params }: MealDetailProps) {
   const { mealSlug } = await params
   const meal = await getMeal(mealSlug)
 
+  if (!meal) {
+    // 제일 가까운 not-found.js를 렌더링
+    notFound()
+  }
+
   return (
     <>
       <header className="flex flex-col md:flex-row gap-12 p-8 mx-auto max-w-7xl">
