@@ -20,7 +20,7 @@ export default function MainHeader() {
             href={'/'}
             className="text-[#ddd6cb] font-bold  font-[Montserrat] text-[1.5rem]"
           >
-            NEXTLEVEL FOOD
+            FOOD . WIKI
           </Link>
         </div>
 

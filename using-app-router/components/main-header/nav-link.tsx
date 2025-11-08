@@ -13,8 +13,6 @@ export default function NavLink({ href, children }: navLinkProps) {
   const path = usePathname()
   const isActive = path.startsWith(href)
 
-  console.log('gofsd')
-
   return (
     <Link
       className={`font-bold py-2 px-4 transition-colors duration-300 hover:text-[#ff8a05] ${
