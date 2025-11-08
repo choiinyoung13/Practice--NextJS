@@ -39,6 +39,7 @@ export default function ImageSlider() {
     <div className="relative w-full h-full rounded-lg overflow-hidden shadow-[0_0_0.5rem_rgba(0,0,0,0.5)]">
       {images.map((image, index) => (
         <Image
+          key={image.alt + index}
           className={`${
             index === currentSelectedImg
               ? 'opacity-100 z-1 scale-100 translate-x-0 rotate-0'
