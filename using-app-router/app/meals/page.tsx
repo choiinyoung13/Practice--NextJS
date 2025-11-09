@@ -4,11 +4,6 @@ import { getMeals } from '@/lib/meal'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
-export const metadata = {
-  title: 'All Meals',
-  description: 'Browse the delicious meals shared by our vibrant community.',
-}
-
 async function Meals() {
   const meals = await getMeals()
 
