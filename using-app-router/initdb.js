@@ -149,6 +149,7 @@ const dummyMeals = [
     creator_email: 'sophiagreen@example.com',
   },
 ]
+// db.prepare('DROP TABLE IF EXISTS meals').run()
 
 db.prepare(
   `
