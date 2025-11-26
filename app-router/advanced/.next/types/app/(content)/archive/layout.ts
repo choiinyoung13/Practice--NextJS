@@ -1,8 +1,8 @@
-// File: C:\Users\dlsdu\Desktop\Practice--NextJS\deep-dive\app\(content)\news\[slug]\image\page.js
-import * as entry from '../../../../../../../app/(content)/news/[slug]/image/page.js'
+// File: C:\Users\dlsdu\Desktop\Practice--NextJS\app-router\advanced\app\(content)\archive\layout.js
+import * as entry from '../../../../../app/(content)/archive/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../../../../app/(content)/news/[slug]/image/page.js')
+type TEntry = typeof import('../../../../../app/(content)/archive/layout.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{
@@ -25,17 +25,17 @@ checkFields<Diff<{
 }, TEntry, ''>>()
 
 // Check the prop type of the entry function
-checkFields<Diff<PageProps, FirstArg<TEntry['default']>, 'default'>>()
+checkFields<Diff<LayoutProps, FirstArg<TEntry['default']>, 'default'>>()
 
 // Check the arguments and return type of the generateMetadata function
 if ('generateMetadata' in entry) {
-  checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
+  checkFields<Diff<LayoutProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
   checkFields<Diff<ResolvingMetadata, SecondArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
 }
 
 // Check the arguments and return type of the generateViewport function
 if ('generateViewport' in entry) {
-  checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateViewport'>>, 'generateViewport'>>()
+  checkFields<Diff<LayoutProps, FirstArg<MaybeField<TEntry, 'generateViewport'>>, 'generateViewport'>>()
   checkFields<Diff<ResolvingViewport, SecondArg<MaybeField<TEntry, 'generateViewport'>>, 'generateViewport'>>()
 }
 
@@ -52,7 +52,8 @@ export interface PageProps {
 }
 export interface LayoutProps {
   children?: React.ReactNode
-
+  archive: React.ReactNode
+  latest: React.ReactNode
   params?: any
 }
 
